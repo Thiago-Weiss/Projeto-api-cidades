@@ -1,0 +1,1 @@
+from .obterDados.obterDadosCidades import processar_arquivo_cidades_base
