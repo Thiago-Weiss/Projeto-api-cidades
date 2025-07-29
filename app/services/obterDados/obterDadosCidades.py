@@ -3,8 +3,8 @@ import pandas as pd
 
 
 # meus arquivos
-from app.core import CIDADE_ESTADOS_ARQUIVO_ORIGINAL, CIDADE_ESTADOS_ARQUIVO, COLUNAS_PADRAO, TIPOS_COLUNAS
-
+from app.core import CIDADE_ESTADOS_ARQUIVO_ORIGINAL, CIDADE_ESTADOS_ARQUIVO, COLUNAS_PADRAO, TIPOS_COLUNAS, NOME_CIDADE, NOME_CIDADE_NORMALIZADO
+from app.services.validacao.normalizarTexto import normalizar_texto
 
 
 def processar_arquivo_cidades_base():
@@ -32,6 +32,9 @@ def processar_arquivo_cidades_base():
     # NAO TEM nenhuma com dado ausente
     print(df.isna().sum())  
     df = df.dropna()
+
+    # cria uma coluna nova com o nome dos municipios normalizados
+    df[NOME_CIDADE_NORMALIZADO] = df[NOME_CIDADE].apply(normalizar_texto)
 
     df.to_parquet(CIDADE_ESTADOS_ARQUIVO)
 

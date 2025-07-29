@@ -8,6 +8,12 @@ router = APIRouter()
 
 @router.get("/estados")
 def obter_estados():
+    
+    # abre o arquivo
     df = pd.read_parquet(CIDADE_ESTADOS_ARQUIVO, columns= [NOME_ESTADO])
+
+    # pega todos os estados
     estados = df[NOME_ESTADO].unique().tolist()
+
+    # retorna
     return JSONResponse(content= estados)

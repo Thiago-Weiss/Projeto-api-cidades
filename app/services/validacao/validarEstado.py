@@ -1,4 +1,4 @@
-import unicodedata
+from .normalizarTexto import normalizar_texto
 
 ESTADOS_MAP = {
     "rondonia": "Rondônia",
@@ -54,14 +54,9 @@ ESTADOS_MAP = {
     "df": "Distrito Federal",
 }
 
-# normaliza o texto removendo todos os acentos
-def normalize_text(text: str) -> str:
-    nfkd = unicodedata.normalize('NFKD', text)
-    return "".join([c for c in nfkd if not unicodedata.combining(c)]).lower().strip()
 
 
 def validar_estado(estado : str) -> str:
-    estado_normalizado = normalize_text(estado)
-    print(estado_normalizado)
+    estado_normalizado = normalizar_texto(estado)
     return ESTADOS_MAP.get(estado_normalizado)
 
