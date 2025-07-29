@@ -24,3 +24,6 @@ app = FastAPI(lifespan=lifespan)
 app.include_router(estados.router)
 
 
+
+
+# rodar "python -m uvicorn app.main:app --reload"

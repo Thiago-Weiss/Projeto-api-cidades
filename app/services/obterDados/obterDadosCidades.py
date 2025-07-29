@@ -1,8 +1,6 @@
-from os import makedirs, path
-import requests
-import zipfile
+from os import path
 import pandas as pd
-import shutil
+
 
 # meus arquivos
 from app.core import CIDADE_ESTADOS_ARQUIVO_ORIGINAL, CIDADE_ESTADOS_ARQUIVO, COLUNAS_PADRAO, TIPOS_COLUNAS
