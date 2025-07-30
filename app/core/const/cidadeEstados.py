@@ -58,7 +58,8 @@ TIPOS_COLUNAS = {
     CODE_REGIAO_IMEDIATA: "Int64",
     NOME_REGIAO_IMEDIATA: str,
 
-    CODE_CIDADE: "Int64",
+    # tem que ser str pq ele tem codigos que começam com zero?
+    CODE_CIDADE: str,
     CODE_CIDADE_COMPLETO: "Int64",
     NOME_CIDADE: str,
 

@@ -12,7 +12,7 @@ router = APIRouter()
             summary= "Lista os distritos de cidade", 
             description= "Retorna uma lista dos distritos da cidades e estado informado, opcionalmente pode retornar junto o codigo e definir o formato da resposta.")
 
-def obter_cidades_por_estado(
+def obter_distritos(
     estado: str = Query(..., description= "Pode ser o **nome** ou a **sigla** do estado. Exemplos: `SC`, `Santa Catarina`, `santa catarina`, `SANTA catarina`"),
     cidade: str = Query(..., description= "O nome da cidade podendo ser, `Florianópolis`, `Florianopolis`, `florianopolis` "),
     codigos: bool = Query(default= False, description= "Quer os codigos dos estados tambem, exp: Rio de Janeiro : 33, SC : 42"),

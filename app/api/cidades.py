@@ -11,7 +11,7 @@ router = APIRouter()
 @router.get("/cidades",
             summary= "Lista as cidades de um estado", 
             description= "Retorna uma lista das cidades do estado informado, opcionalmente pode retornar junto o codigo e definir o formato da resposta.")
-def obter_cidades_por_estado(
+def obter_cidades(
     estado: str = Query(..., description="Retorna as cidades do estado passado. Pode ser o **nome** ou a **sigla** do estado. Exemplos: `SC`, `Santa Catarina`, `santa catarina`, `SANTA catarina`"),
     codigos: bool = Query(default= False, description= "Quer os codigos dos estados tambem, exp: Rio de Janeiro : 33, SC : 42"),
     resposta_formato: RespostaFormato = Query(default= RespostaFormato.OBJETO, description= "Formato da resposta")

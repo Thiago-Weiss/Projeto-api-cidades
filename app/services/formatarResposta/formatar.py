@@ -11,4 +11,4 @@ def converter_para_o_front(df : pd.DataFrame, formato : RespostaFormato) -> list
             return df.to_dict(orient="records")
         
         case RespostaFormato.LISTAS:
-            return {col: df[col].unique().tolist() for col in df.columns}
+            return {col: df[col].tolist() for col in df.columns}
