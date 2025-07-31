@@ -5,7 +5,7 @@ import sys
 
 
 from app.core import CIDADE_ESTADOS_ARQUIVO
-from app.api import estados, cidades, distritos, localizarCodigo, localizarNome
+from app.api import bairros, estados, cidades, localizarCodigo, localizarNome
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -27,7 +27,7 @@ async def root():
 # Inclui os roteadores
 app.include_router(estados.router)
 app.include_router(cidades.router)
-app.include_router(distritos.router)
+app.include_router(bairros.router)
 app.include_router(localizarCodigo.router)
 app.include_router(localizarNome.router)
 

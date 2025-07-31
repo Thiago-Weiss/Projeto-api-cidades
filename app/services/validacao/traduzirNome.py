@@ -1,5 +1,5 @@
 import pandas as pd
-from app.core import RangePesquisa, FormaPesquisa, CIDADE_ESTADOS_ARQUIVO, NOME_ESTADO, NOME_REGIAO_INTERMEDIARIA, NOME_REGIAO_IMEDIATA, NOME_CIDADE, NOME_CIDADE_NORMALIZADO, NOME_DISTRITO
+from app.core import RangePesquisa, FormaPesquisa, CIDADE_ESTADOS_ARQUIVO, NOME_ESTADO, NOME_REGIAO_INTERMEDIARIA, NOME_REGIAO_IMEDIATA, NOME_CIDADE, NOME_CIDADE_NORMALIZADO, NOME_BAIRRO
 from app.services import normalizar_texto
 
 COLUNA_NORMALIZADA = "COLUNA_NORMALIZADA"
@@ -55,9 +55,9 @@ def pesquisar_nome(nome : str, renge_pesquisa : RangePesquisa, forma_pesquisa : 
             df = filtrar_coluna(df, NOME_CIDADE_NORMALIZADO, nome_normalizado, forma_pesquisa)
             return df
         
-        case renge_pesquisa.DISTRITO:
-            df = pd.read_parquet(CIDADE_ESTADOS_ARQUIVO, columns= [NOME_ESTADO, NOME_REGIAO_INTERMEDIARIA, NOME_REGIAO_IMEDIATA, NOME_CIDADE, NOME_DISTRITO])
-            df[COLUNA_NORMALIZADA] = df[NOME_DISTRITO].apply(normalizar_texto)
+        case renge_pesquisa.BAIRRO:
+            df = pd.read_parquet(CIDADE_ESTADOS_ARQUIVO, columns= [NOME_ESTADO, NOME_REGIAO_INTERMEDIARIA, NOME_REGIAO_IMEDIATA, NOME_CIDADE, NOME_BAIRRO])
+            df[COLUNA_NORMALIZADA] = df[NOME_BAIRRO].apply(normalizar_texto)
             df = filtrar_coluna(df, COLUNA_NORMALIZADA, nome_normalizado, forma_pesquisa)
             return df
 

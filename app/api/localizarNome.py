@@ -10,7 +10,7 @@ router = APIRouter()
 
 @router.get("/localizar-nome/{nome}",
             summary= "Tenta traduzir o nome passado", 
-            description= "Tenta traduzir o nome passado, retornando o dados como estado, cidade, distrito... que contenham o nome")
+            description= "Tenta traduzir o nome passado, retornando o dados como estado, cidade, bairro... que contenham o nome")
 
 def localizar_nome(
     nome: str = Path(..., description="Passe um nome e uma forma de pesquisa pra tentar achar algo relacionando"),

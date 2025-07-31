@@ -11,14 +11,14 @@ router = APIRouter()
 @router.get("/localizar-codigo/{codigo}",
             summary= "Tenta traduzir o codigo passado", 
             description=(
-                "Tenta traduzir o código passado, retornando dados como estado, cidade ou distrito.\n\n"
+                "Tenta traduzir o código passado, retornando dados como estado, cidade ou bairro.\n\n"
                 "**Tamanhos de código aceitos:**\n"
                 "- **2 dígitos** → Estado (UF)\n"
                 "- **4 dígitos** → Região intermediária\n"
                 "- **5 dígitos** → Região imediata\n"
                 "- **5 dígitos** → Município\n"
                 "- **7 dígitos** → Município completo\n"
-                "- **9 dígitos** → Distrito completo"
+                "- **9 dígitos** → Bairo completo"
             ))
 def localizar_codigo(
     codigo: str = Path(..., pattern=r"^\d{2,9}$", description="Código entre 2 e 9 caracteres numericos"),
