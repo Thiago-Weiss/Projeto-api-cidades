@@ -58,7 +58,5 @@ def pesquisar_nome(nome : str, renge_pesquisa : RangePesquisa, forma_pesquisa : 
             df = filtrar_coluna(df, COLUNA_NORMALIZADA, nome_normalizado, forma_pesquisa)
             return df
 
-        case renge_pesquisa.TUDO:
-            pass
 
 

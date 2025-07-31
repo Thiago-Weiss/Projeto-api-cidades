@@ -2,7 +2,6 @@ from enum import Enum
 
 
 class RangePesquisa(str, Enum):
-    TUDO = "TUDO"
     ESTADOS = "ESTADOS"
     REGIAO_INTERMEDIARIA = "REGIAO_INTERMEDIARIA"
     REGIAO_IMEDIATA = "REGIAO_IMEDIATA"
