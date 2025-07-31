@@ -3,6 +3,8 @@
 **Brasil GeoAPI** é uma API desenvolvida em **Python** utilizando **FastAPI** e **Pandas**, que fornece dados geográficos do Brasil.  
 Com ela, é possível consultar estados, cidades, bairros, traduzir códigos do IBGE em localizações, além de buscar nomes para encontrar locais correspondentes.
 
+➡️ **[Acesse a API Online](https://api-geografia-brasil.onrender.com/docs)** *(pode levar alguns segundos para o servidor iniciar)*
+
 ---
 
 ## 🚀 Funcionalidades
@@ -53,31 +55,31 @@ app/
 ### GET /localizar-nome/{nome}
 ![](img/nomes.png)
 
+---
 
 ## ▶️ Como rodar o projeto localmente
 
-1️⃣ **Clone o repositório**
+Clone o repositório
 ```bash
-https://github.com/seu-usuario/brasil-geoapi.git
+https://github.com/Thiago-Weiss/Projeto-api-cidades.git
 ```
-
-```bash
-https://github.com/seu-usuario/brasil-geoapi.git
-```
+Crie o ambiente virtual do Python
 ```bash
 python -m venv venv
 source venv/bin/activate   # Linux/Mac
 venv\Scripts\activate      # Windows
 ```
+Instale as dependencias
 ```bash
 pip install -r requirements.txt
 ```
+Rode o servidor
 ```bash
 uvicorn app.main:app --reload
 ou
 python -m uvicorn app.main:app --reload
 ```
-acesse
+Acesse a api
 ```bash
 http://127.0.0.1:8000/docs
 ```
