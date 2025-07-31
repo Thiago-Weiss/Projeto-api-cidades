@@ -9,16 +9,19 @@ def filtrar_coluna(df : pd.DataFrame, coluna : str, nome_normalizado: str, forma
         case FormaPesquisa.EXATO:
             df = df[df[coluna] == nome_normalizado]
             df = df.drop(columns=[coluna])
+            df = df.drop_duplicates()
             return df
 
         case FormaPesquisa.PALAVRA:
             df = df[df[coluna].str.contains(rf"\b{nome_normalizado}\b", case=False, na=False, regex=True)]
             df = df.drop(columns=[coluna])
+            df = df.drop_duplicates()
             return df
 
         case FormaPesquisa.CONTEM:
             df = df[df[coluna].str.contains(nome_normalizado, case=False, na=False)]
             df = df.drop(columns=[coluna])
+            df = df.drop_duplicates()
             return df
 
 
