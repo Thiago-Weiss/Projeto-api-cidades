@@ -36,22 +36,22 @@ app/
 
 
 ## 📊 Rotas
-!(img/docs.png)
+![](img/docs.png)
 
 ### GET /estados
-imagem do estados
+![](img/estados.png)
 
 ### GET /cidades
-imagem do cidades
+![](img/cidades.png)
 
 ### GET /bairros
-imagem do bairros
+![](img/bairros.png)
 
 ### GET /localizar-codigo/{codigo}
-imagem do localizar codigo
+![](img/codigos.png)
 
 ### GET /localizar-nome/{nome}
-imagem do localizar nome
+![](img/nomes.png)
 
 
 ## ▶️ Como rodar o projeto localmente
