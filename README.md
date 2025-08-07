@@ -13,8 +13,8 @@ Com ela, é possível consultar estados, cidades, bairros, traduzir códigos do 
 ✅ Listar **cidades** de um estado  
 ✅ Listar **bairros** de uma cidade  
 ✅ Traduzir **códigos IBGE** para localizações exp: 42 -> Santa Catarina   
-✅ Buscar por **nomes** para ver possíveis locais correspondentes exp: pesquisando o nome **Santa Maria** na opcao de cidades vai retornar que tem duas cidades com esse nome uma em Rio Grande do Norte e a outra no Rio Grande do Sul
-
+✅ Buscar por **nomes** para ver possíveis locais correspondentes, exp: pesquisando o nome **Santa Maria** na opcao de cidades vai retornar que tem duas cidades com esse nome uma em Rio Grande do Norte e a outra no Rio Grande do Sul
+✅ Traduz coordenadas (latitude e longitude) para estado, regions e cidade, exp: SC e Florianópolis -> LATITUDE: -27.5777, LONGITUDE: -48.5081
 ---
 
 ## 🛠️ Principais Tecnologias utilizadas
