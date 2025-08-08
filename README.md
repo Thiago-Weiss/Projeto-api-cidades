@@ -13,7 +13,14 @@ Com ela, é possível consultar estados, cidades, bairros, traduzir códigos do 
 ✅ Listar **cidades** de um estado  
 ✅ Listar **bairros** de uma cidade  
 ✅ Traduzir **códigos IBGE** para localizações exp: 42 -> Santa Catarina   
-✅ Buscar por **nomes** para ver possíveis locais correspondentes exp: pesquisando o nome **Santa Maria** na opcao de cidades vai retornar que tem duas cidades com esse nome uma em Rio Grande do Norte e a outra no Rio Grande do Sul
+✅ Buscar por **nomes** para ver possíveis locais correspondentes     
+    exp: pesquisando o nome **Santa Maria** na opcao de cidades vai retornar que tem duas cidades com esse nome uma em Rio Grande do Norte e a outra no Rio Grande do Sul    
+✅ Traduzir coordenadas *(latitude e longitude)* para estado, regions e cidade          
+    exp: LATITUDE: -27.5777, LONGITUDE: -48.5081 -> Estado: SC, Cidade: Florianópolis     
+✅ Traduzir localização *(estado e cidade)* para coordenadas *(latitude e longitude)*     
+    exp: Estado: SC, Cidade: Florianópolis -> LATITUDE: -27.5777, LONGITUDE: -48.5081      
+✅ Traduzir codigo do IBGE para cordenadas *(latitude e longitude)*        
+    exp: 4205407 -> LATITUDE: -27.5777, LONGITUDE: -48.5081    
 
 ---
 
