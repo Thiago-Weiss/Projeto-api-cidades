@@ -34,6 +34,7 @@ def obter_cidades(
     # Filtra só as cidades do estado validado
     df = df[df[NOME_ESTADO] == estado_valido]
 
+    # remove os as linhas duplicadas
     df = df.drop_duplicates(subset=[NOME_CIDADE])
 
     return converter_para_o_front(df, resposta_formato, True)

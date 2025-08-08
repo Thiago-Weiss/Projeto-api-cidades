@@ -5,7 +5,7 @@ import sys
 
 
 from app.core import CIDADE_ESTADOS_ARQUIVO
-from app.api import bairros, estados, cidades, localizarCodigo, localizarNome
+from app.api import bairros, estados, cidades, localizarCodigo, localizarCoordenadasPorEstadoCidade, localizarNome, localizarCoordenadaPorCodigo, localizarCoordenada
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -30,8 +30,12 @@ app.include_router(cidades.router)
 app.include_router(bairros.router)
 app.include_router(localizarCodigo.router)
 app.include_router(localizarNome.router)
-
+app.include_router(localizarCoordenadasPorEstadoCidade.router)
+app.include_router(localizarCoordenadaPorCodigo.router)
+app.include_router(localizarCoordenada.router)
 
 
 
 # rodar "python -m uvicorn app.main:app --reload"
+
+

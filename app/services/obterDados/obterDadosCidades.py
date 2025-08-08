@@ -4,7 +4,7 @@ import geopandas as gpd
 
 
 # meus arquivos
-from app.core import CIDADE_ESTADOS_ARQUIVO_ORIGINAL, CIDADE_ESTADOS_ARQUIVO_ORIGINAL, CIDADE_ESTADOS_ARQUIVO, COLUNAS_PADRAO, TIPOS_COLUNAS, NOME_CIDADE, NOME_CIDADE_NORMALIZADO, CORDENADAS_ARQUIVO_ORIGINAL, CENTROIDE, LATITUDE, LONGITUDE, CD_MUN, CODE_CIDADE_COMPLETO
+from app.core import CIDADE_ESTADOS_ARQUIVO_ORIGINAL, CIDADE_ESTADOS_ARQUIVO_ORIGINAL, CIDADE_ESTADOS_ARQUIVO, COLUNAS_PADRAO, TIPOS_COLUNAS, NOME_CIDADE, NOME_CIDADE_NORMALIZADO, COORDENADAS_ARQUIVO_ORIGINAL, CENTROIDE, LATITUDE, LONGITUDE, CD_MUN, CODE_CIDADE_COMPLETO
 from app.services.validacao.normalizarTexto import normalizar_texto
 
 
@@ -39,9 +39,9 @@ def processar_arquivo_cidades_base():
 
 
 
-    # agora cria o df_cidades_estados das cordenadas
+    # agora cria o df_cidades_estados das coordenadas
     # Carrega o shapefile
-    gdf = gpd.read_file(CORDENADAS_ARQUIVO_ORIGINAL, columns=[CENTROIDE, CD_MUN])
+    gdf = gpd.read_file(COORDENADAS_ARQUIVO_ORIGINAL, columns=[CENTROIDE, CD_MUN])
 
     # Reprojeta para um sistema métrico (UTM zone 23S - EPSG:31983)
     gdf_proj = gdf.to_crs(epsg=31983)
@@ -55,19 +55,21 @@ def processar_arquivo_cidades_base():
 
 
     # Seleciona colunas desejadas
-    df_cordenada = gdf[[CD_MUN, LATITUDE, LONGITUDE]]
+    df_coordenada = gdf[[CD_MUN, LATITUDE, LONGITUDE]]
 
     # renomeia a coluna pra terem o mesmo nome nos dois dataframes
-    df_cordenada = df_cordenada.rename(columns={CD_MUN: CODE_CIDADE_COMPLETO})
+    df_coordenada = df_coordenada.rename(columns={CD_MUN: CODE_CIDADE_COMPLETO})
 
     # converte para int o codigo da cidade
-    df_cordenada[CODE_CIDADE_COMPLETO] = df_cordenada[CODE_CIDADE_COMPLETO].astype(int)
+    df_coordenada[CODE_CIDADE_COMPLETO] = df_coordenada[CODE_CIDADE_COMPLETO].astype(int)
+    df_coordenada[LATITUDE] = df_coordenada[LATITUDE].astype(float)
+    df_coordenada[LONGITUDE] = df_coordenada[LONGITUDE].astype(float)
 
     # junta os data frames
-    df_cordenada = df_cordenada.merge(df_cidades_estados, on=CODE_CIDADE_COMPLETO, how= "left")
+    df_coordenada = df_coordenada.merge(df_cidades_estados, on=CODE_CIDADE_COMPLETO, how= "left")
 
     # salva o arquivo
-    df_cordenada.to_parquet(CIDADE_ESTADOS_ARQUIVO, index= False )
+    df_coordenada.to_parquet(CIDADE_ESTADOS_ARQUIVO, index= False )
 
 
 

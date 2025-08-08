@@ -19,7 +19,7 @@ CODE_BAIRRO = "CODE_BAIRRO"
 CODE_BAIRRO_COMPLETO = "CODE_BAIRRO_COMPLETO"
 NOME_BAIRRO = "NOME_BAIRRO"
 
-# colunas das cordenadas
+# colunas das coordenadas
 CENTROIDE   = "centroide"
 LATITUDE    = "LATITUDE"
 LONGITUDE   = "LONGITUDE"
